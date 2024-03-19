@@ -4,3 +4,7 @@
 下载好文件（填写内容的文件）然后一键运行下面的环境脚本
 
 wget -O update.sh https://raw.githubusercontent.com/sxed7788521/eli/main/update.sh && chmod +x update.sh && ./update.sh
+
+然后在下在安装和运行的部署代码
+
+wget -O elixir.sh https://raw.githubusercontent.com/sxed7788521/eli/main/elixir.sh && chmod +x elixir.sh && ./elixir.sh
