@@ -11,11 +11,11 @@ ENV PRIVATE_KEY=0x                       #在=号后填写EVM钱包私钥要对�
 
 ENV VALIDATOR_NAME=AnonValidator         #在=号后填写节点名字（名字自定义）
 
-一键运行环境脚本
+一键输入运行环境脚本
 
 wget -O update.sh https://raw.githubusercontent.com/sxed7788521/eli/main/update.sh && chmod +x update.sh && ./update.sh
 
-一键运行elixir节点脚本
+一键输入运行elixir节点脚本（该脚本要放有Dockerfile文件目录下才能运行，ls命令可以查看当前目录有没有该文件）
 
 wget -O elixir.sh https://raw.githubusercontent.com/sxed7788521/eli/main/elixir.sh && chmod +x elixir.sh && ./elixir.sh
 
