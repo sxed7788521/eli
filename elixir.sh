@@ -17,7 +17,6 @@ while true; do
     case $choice in
         1)
             echo "生成 Docker 映像 elixir ..."
-            source /root/elixir.sh
             if docker build . -f Dockerfile -t elixir-validator; then
                 echo "Docker 映像 elixir 已成功生成"
             else
@@ -26,7 +25,6 @@ while true; do
             ;;
         2)
             echo "启动 elixir ..."
-            source /root/elixir.sh
             if docker run -it --name ev elixir-validator; then
                 echo "elixir 成功启动"
             else
@@ -35,7 +33,6 @@ while true; do
             ;;
         3)
             echo "启动 elixir 并设置为自动重启 ..."
-            source /root/elixir.sh
             if docker run -d --restart unless-stopped --name ev elixir-validator; then
                 echo "elixir 成功启动并设置为自动重启"
             else
@@ -44,7 +41,6 @@ while true; do
             ;;
         4)
             echo "查看 elixir 日志 ..."
-            source /root/elixir.sh
             if docker logs -t --tail=10 ev; then
                 echo "成功查看 elixir 日志"
             else
@@ -52,16 +48,13 @@ while true; do
             fi
             ;;
         5)
-            source /root/elixir.sh
             docker ps
             ;;
         6)
-            source /root/elixir.sh
             docker -v
             ;;
         7)
             echo "结束进程 elixir 并升级/获取最新版本再运行 ..."
-            source /root/elixir.sh
             if docker kill ev && docker rm ev && docker pull elixirprotocol/validator:testnet-2 && docker build . -f Dockerfile -t elixir-validator && docker run -d --restart unless-stopped --name ev elixir-validator; then
                 echo "成功结束进程 elixir 并升级/获取最新版本再运行"
             else
@@ -70,7 +63,6 @@ while true; do
             ;;
         8)
             echo "添加 elixir 快捷方式 ..."
-            source /root/elixir.sh
             if grep -q 'alias elixir="/root/elixir.sh"' ~/.bashrc; then
                 echo "别名 elixir 已存在"
             else
@@ -94,7 +86,11 @@ while true; do
             exit 0
             ;;
         *)
-            echo "无效的选择"
+            echo "无效的选择，请重新选择"
             ;;
     esac
+
+    # 添加一个提示并等待用户按 Enter 键继续
+    read -p "按 Enter 键继续..."
+    echo ""
 done
