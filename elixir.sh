@@ -10,7 +10,6 @@ while true; do
     echo "6. 查看 Docker 版本信息"
     echo "7. 结束进程 elixir 并升级/获取最新版本再运行"
     echo "8. 添加 elixir 快捷方式"
-    echo "9. 重新加载 ~/.bashrc 文件"
     echo "0. 退出并执行"
     read choice
 
@@ -68,17 +67,6 @@ while true; do
             else
                 echo 'alias elixir="/root/elixir.sh"' >> ~/.bashrc
                 echo "成功添加别名 elixir"
-            fi
-            ;;
-        9)
-            echo "重新加载 ~/.bashrc 文件 ..."
-            source ~/.bashrc
-            echo "成功重新加载 ~/.bashrc 文件"
-            echo "检查是否存在别名 elixir："
-            if alias elixir &> /dev/null; then
-                echo "别名 elixir 存在"
-            else
-                echo "别名 elixir 不存在"
             fi
             ;;
         0)
