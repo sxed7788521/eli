@@ -24,7 +24,6 @@ case $choice in
         ;;
     2)
         echo "启动 elixir ..."
-        source /root/elixir.sh
         if docker run -it --name ev elixir-validator; then
             echo "elixir 成功启动"
         else
@@ -33,7 +32,6 @@ case $choice in
         ;;
     3)
         echo "启动 elixir 并设置为自动重启 ..."
-        source /root/elixir.sh
         if docker run -d --restart unless-stopped --name ev elixir-validator; then
             echo "elixir 成功启动并设置为自动重启"
         else
@@ -42,7 +40,6 @@ case $choice in
         ;;
     4)
         echo "查看 elixir 日志 ..."
-        source /root/elixir.sh
         if docker logs -t --tail=10 ev; then
             echo "成功查看 elixir 日志"
         else
@@ -50,11 +47,9 @@ case $choice in
         fi
         ;;
     5)
-        source /root/elixir.sh
         docker ps
         ;;
     6)
-        source /root/elixir.sh
         docker -v
         ;;
     7)
