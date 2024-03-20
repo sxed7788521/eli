@@ -11,7 +11,7 @@ ENV PRIVATE_KEY=0x                       #在=号后填写EVM钱包私钥要对�
 
 ENV VALIDATOR_NAME=AnonValidator         #在=号后填写节点名字（名字自定义）
 
-一键输入运行环境脚本
+一键输入运行环境脚本（安装docker和更新yum或apt直接跳过）
 
 wget -O update.sh https://raw.githubusercontent.com/sxed7788521/eli/main/update.sh && chmod +x update.sh && ./update.sh
 
