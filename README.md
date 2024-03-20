@@ -2,6 +2,12 @@
 先下载官网Dockerfile文件填写文件密钥，地址，自定义名字，下载地址：https://files.elixir.finance/Dockerfile
 
 下载好文件（填写内容的文件）然后一键运行下面的环境脚本
+Dockerfile文件格式
+FROM elixirprotocol/validator:testnet-2  #这个程序名称
+
+ENV ADDRESS=0x                           #在=号后填写EVM钱包地址
+ENV PRIVATE_KEY=0x                       #在=号后填写EVM钱包私钥要对应上面填写的地址
+ENV VALIDATOR_NAME=AnonValidator         #在=号后填写节点名字（名字自定义）
 
 wget -O update.sh https://raw.githubusercontent.com/sxed7788521/eli/main/update.sh && chmod +x update.sh && ./update.sh
 
